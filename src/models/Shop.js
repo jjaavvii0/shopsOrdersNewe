@@ -1,7 +1,7 @@
 import {Schema, model} from "mongoose";
 
 const shopSchema = new Schema({
-    name: { type: String },
+    name: { type: String, required: true},
     description: { type: String },
     phone: { type: String },
     email: { type: String },
@@ -16,6 +16,7 @@ const shopSchema = new Schema({
     //Quitar _ antes de cada campo.
     versionKey: false
 })
+
 
 //Exportamos un model, el model se va a llamar "Shop" y está basado
 //en el schema shopSchema que acabamos de crear

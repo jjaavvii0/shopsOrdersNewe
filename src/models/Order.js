@@ -21,6 +21,12 @@ const orderSchema = new Schema({
 //TODO: Items y total
 
 
+
+orderSchema.statics.getTotal = async () =>{
+    //TODO
+    return 0;
+}
+
 //Exportamos un model, el model se va a llamar "Shop" y está basado
 //en el schema shopSchema que acabamos de crear
 export default model("Order", orderSchema)

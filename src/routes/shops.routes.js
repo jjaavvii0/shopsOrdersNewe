@@ -4,11 +4,11 @@ const router = Router()
 import * as shopsCtrl from "../controllers/shops.controller"
 
 
-router.post("/", shopsCtrl.placeHolder)
-router.get("/", shopsCtrl.placeHolder)
-router.get("/:idShop", shopsCtrl.placeHolder)
-router.put("/:idShop", shopsCtrl.placeHolder)
-router.delete("/:idShop", shopsCtrl.placeHolder)
+router.post("/", shopsCtrl.createShop)
+router.get("/", shopsCtrl.getShops)
+router.get("/:idShop", shopsCtrl.getShopById)
+router.put("/:idShop", shopsCtrl.updateShopById)
+router.delete("/:idShop", shopsCtrl.deleteShopById)
 
 
 
