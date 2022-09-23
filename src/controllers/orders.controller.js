@@ -7,8 +7,14 @@ export const placeHolder = async (req, res) => {
 }
 
 export const createOrder = async (req, res) => {
+
     const {status, items, total, shop} = req.body;
-    const newOrder = new Order ({status, items, total, shop});
+    const newOrder = new Order ({
+        status, 
+        items, 
+        total: await Order.getTotal(items), 
+        shop
+    });
 
     const orderSaved = await newOrder.save();
 

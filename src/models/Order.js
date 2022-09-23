@@ -20,6 +20,10 @@ const orderSchema = new Schema({
     versionKey: false
 })
 
-//TODO: Total
+orderSchema.statics.getTotal = async (items) => {
+    const sumAll = items.map(item => item.total).reduce((prev, curr) => prev + curr, 0);
+    return await sumAll;
+}
+
 
 export default model("Order", orderSchema)
