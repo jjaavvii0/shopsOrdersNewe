@@ -3,6 +3,7 @@ import morgan from "morgan"
 
 
 import shopsRoutes from './routes/shops.routes'
+import ordersRoutes from './routes/orders.routes'
 
 
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 app.use(morgan("dev"))
 app.use(express.json())
 
-app.use("/api/shops", shopsRoutes);
+app.use("/shops", shopsRoutes);
+app.use("/orders", ordersRoutes);
 
 export default app;
