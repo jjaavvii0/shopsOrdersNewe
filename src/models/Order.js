@@ -6,11 +6,13 @@ const orderSchema = new Schema({
         enum : ['pending','processing', 'completed'],
         default: 'pending’'
     },
-    items:[{
-        type: String
+    items: [{
+        name : Number,
+        quantity : Number,
+        total: Number
     }],
     total: { type: Number }, 
-    shop: { type: Schema.ObjectId },
+    shop: { type: Schema.Types.ObjectId, ref: 'Shop' }
 },{
     //Fecha de creación y actualización.
     timestamps: true,
@@ -18,15 +20,6 @@ const orderSchema = new Schema({
     versionKey: false
 })
 
-//TODO: Items y total
+//TODO: Total
 
-
-
-orderSchema.statics.getTotal = async () =>{
-    //TODO
-    return 0;
-}
-
-//Exportamos un model, el model se va a llamar "Shop" y está basado
-//en el schema shopSchema que acabamos de crear
 export default model("Order", orderSchema)
