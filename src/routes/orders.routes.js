@@ -6,9 +6,9 @@ import * as ordersCtrl from "../controllers/orders.controller"
 
 router.post("/", ordersCtrl.createOrder)
 router.get("/", ordersCtrl.getOrders)
-router.get("/:idOrder", ordersCtrl.placeHolder)
-router.put("/:idOrder", ordersCtrl.placeHolder)
-router.delete("/:idOrder", ordersCtrl.placeHolder)
+router.get("/:idOrder", ordersCtrl.getOrderById)
+router.put("/:idOrder", ordersCtrl.updateOrderById)
+router.delete("/:idOrder", ordersCtrl.deleteOrderById)
 
 
 

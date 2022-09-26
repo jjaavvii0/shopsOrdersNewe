@@ -11,6 +11,7 @@ export const createShop = async (req, res) => {
 
 export const getShops = async (req, res)=> {
     const shops = await Shop.find(req.query)
+        .limit(10).skip(10*(req.query.page-1));
     res.status(200).json(shops)
 }
 
