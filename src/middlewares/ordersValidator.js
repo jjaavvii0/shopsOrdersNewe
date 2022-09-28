@@ -1,5 +1,5 @@
 import {check} from 'express-validator'
-import {validateResult} from '../middlewares/dataValidator'
+import {validateResult} from '../helpers/dataValidator'
 import Shop from "../models/Shop"
 
 const validateCreate = [

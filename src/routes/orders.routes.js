@@ -2,7 +2,7 @@ import {Router} from "express"
 const router = Router()
 
 import * as ordersCtrl from "../controllers/orders.controller"
-import {validateCreate} from "../validators/orders"
+import {validateCreate} from "../middlewares/ordersValidator"
 
 router.post("/", validateCreate, ordersCtrl.createOrder)
 router.get("/", ordersCtrl.getOrders)

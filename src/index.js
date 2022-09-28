@@ -1,8 +1,10 @@
 import app from "./app"
 import "./database"
+require('dotenv').config()
 
-app.listen(4000);
+const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) =>{
-    res.json({message:"Welcome to shops and orders API"})
-})
+app.listen(PORT, (err) => {
+    if (err) { console.log(err); }
+    else { console.log(`Server is listening on port ${PORT}`); }
+});
