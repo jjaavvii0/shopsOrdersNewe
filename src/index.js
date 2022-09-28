@@ -8,3 +8,7 @@ app.listen(PORT, (err) => {
     if (err) { console.log(err); }
     else { console.log(`Server is listening on port ${PORT}`); }
 });
+
+app.get("/", (req, res) =>{
+    res.json({message:"Welcome to shops and orders API"})
+})
