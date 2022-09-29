@@ -1,0 +1,315 @@
+{
+	"info": {
+		"_postman_id": "86e29a11-e18a-4e1e-b671-9fb2ec560a5a",
+		"name": "ShopsOrdersNEWE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16618905"
+	},
+	"item": [
+		{
+			"name": "SHOPS",
+			"item": [
+				{
+					"name": "/shops",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Los Rosales\",\r\n    \"description\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\",\r\n    \"phone\": \"928222222\",\r\n    \"email\": \"losRosales@tienda.com\",\r\n    \"type\": \"full-outsourcing\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/shops",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/shops?type=full-outsourcing&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Los Rosales",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": "tienda2@email.com",
+									"disabled": true
+								},
+								{
+									"key": "type",
+									"value": "full-outsourcing"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/shops/idShop",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/shops/63357b182d4ce7a6d130218a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops",
+								"63357b182d4ce7a6d130218a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/shops/idShop",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tienda en Los Alisios UPDATED\",\r\n    \"description\": \"Large size UPDATED\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shops/633459cb41d558c5f1bfc9d4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops",
+								"633459cb41d558c5f1bfc9d4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/shops/idShop",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tienda en Los Alisios UPDATED\",\r\n    \"description\": \"Large size UPDATED\",\r\n    \"phone\": \"928220012\",\r\n    \"email\": \"tienda2@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/shops/632d9c6b8a278d253de25205",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"shops",
+								"632d9c6b8a278d253de25205"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDERS",
+			"item": [
+				{
+					"name": "/orders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"status\":\"pending\",\r\n\t\"items\": [\r\n        {\r\n            \"name\" : 1,\r\n            \"quantity\" : 2,\r\n            \"total\": 8\r\n        },\r\n        {\r\n            \"name\" : 333,\r\n            \"quantity\" : 62,\r\n            \"total\": 15\r\n        }\r\n    ],\r\n    \"shop\": \"632d9d3a4ff639360e24a1b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/orders?shop=632d9d3a4ff639360e24a1b8&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "itemName",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "status",
+									"value": "pending",
+									"disabled": true
+								},
+								{
+									"key": "shop",
+									"value": "632d9d3a4ff639360e24a1b8"
+								},
+								{
+									"key": "type",
+									"value": "in-house",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders/idOrder",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/orders/633343a41f711b32c0de9e0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"633343a41f711b32c0de9e0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders/idOrder",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"pending\",\r\n    \"shop\": \"63357b182d4ce7a6d130218a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/633343a41f711b32c0de9e0c",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"633343a41f711b32c0de9e0c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/orders/idOrder",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tienda en Los Alisios UPDATED\",\r\n    \"description\": \"Large size UPDATED\",\r\n    \"phone\": \"928220012\",\r\n    \"email\": \"tienda2@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/orders/632deeb019d4bc72c53d1ede",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"632deeb019d4bc72c53d1ede"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

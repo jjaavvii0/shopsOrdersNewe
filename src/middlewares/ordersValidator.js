@@ -6,7 +6,7 @@ const validateCreate = [
     check('shop')
     .exists()
     .custom(async idShop => {
-        let shopCheck = await Shop.findById(idShop);
+        const shopCheck = await Shop.findById(idShop);
         if (shopCheck == null) {
             throw new Error("This Shop ID doesn't exists")
         }

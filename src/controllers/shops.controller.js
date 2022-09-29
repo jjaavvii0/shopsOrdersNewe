@@ -15,9 +15,13 @@ export const createShop = async (req, res) => {
 
 export const getShops = async (req, res)=> {
     try{
+        const requestedPage = req.query.page ? (req.query.page - 1) : 0;
+
         const shops = await Shop.find(req.query)
-            .limit(10).skip(10*(req.query.page-1));
-        res.status(200).json(shops)
+        .limit(10)
+        .skip(10*requestedPage);
+
+        res.status(200).json(shops);
 
     }catch(e){
         res.status(404).json(e);
@@ -26,8 +30,8 @@ export const getShops = async (req, res)=> {
 
 export const getShopById = async (req, res)=> {
     try{
-        const shop = await Shop.findById(req.params.idShop)
-        res.status(200).json(shop)
+        const shop = await Shop.findById(req.params.idShop);
+        res.status(200).json(shop);
     }catch(e){
         res.status(404).json(e);
     }
@@ -43,7 +47,7 @@ export const updateShopById = async(req, res) => {
             //por defecto mandaría los datos antiguos.
             new:true
         })
-        res.status(200).json(updatedShop)
+        res.status(200).json(updatedShop);
     }catch(e){
         res.status(404).json(e);
     }
